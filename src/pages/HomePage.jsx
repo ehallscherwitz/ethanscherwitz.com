@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 import PlaceholderImage from '../components/PlaceholderImage'
 import ProjectCard from '../components/ProjectCard'
-import { projects } from '../data/projects'
+import { featuredSlugs, getProject } from '../data/projects'
 import './HomePage.css'
 
 function HomePage() {
-  const featured = projects.slice(0, 3)
+  const featured = featuredSlugs.map((slug) => getProject(slug))
 
   return (
     <main className="home">
@@ -19,13 +19,13 @@ function HomePage() {
               <span className="home-title-line">Who I Am</span>
             </h1>
             <p className="home-text home-text--lead">
-              Ethan Scherwitz is a computer science student at UT Dallas, working across design and engineering.
+              Ethan Scherwitz builds tools and pipelines — Blender add-ons, Figma plugins, publish automations — so teams can move faster.
             </p>
             <p className="home-text">
-              I build websites, tools, and visual systems — from the Third Space Digital platform to Three.js studies and Figma plugins.
+              CS at UT Dallas. Applying to Game Lab for tooling, pipelines, and version control; UI/UX second. The work is custom software around 3D, design, and production, not a reel of shipped games.
             </p>
             <p className="home-text home-text--italic">
-              Images and case studies go here as they land.
+              Screenshots and videos land here as they come in.
             </p>
           </div>
         </div>

@@ -42,6 +42,17 @@
   flex-direction: column;
 }
 
+.project-tag {
+  color: var(--color-black);
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 16px 20px 0;
+}
+
 .project-title {
   color: var(--color-black);
   font-family: var(--font);
@@ -49,7 +60,7 @@
   font-weight: 900;
   line-height: 1.2;
   margin: 0;
-  padding: 16px 20px 8px;
+  padding: 8px 20px 8px;
   text-align: left;
   overflow: hidden;
   display: -webkit-box;

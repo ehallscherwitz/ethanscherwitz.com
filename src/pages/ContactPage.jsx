@@ -19,6 +19,14 @@ function ContactPage() {
         >
           github.com/ehallscherwitz
         </a>
+        <a
+          className="contact-link"
+          href="https://www.linkedin.com/in/ethan-scherwitz333"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          linkedin.com/in/ethan-scherwitz333
+        </a>
       </div>
     </main>
   )

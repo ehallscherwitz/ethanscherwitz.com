@@ -11,13 +11,6 @@ npm run dev
 
 ## Images
 
-Drop files here when you have them. Placeholder boxes show until then.
+Drop files here. Placeholder boxes show until then. Exact list is in `memory.md`.
 
-- `public/images/portrait.jpg`
-- `public/images/work/thirdspace.jpg`
-- `public/images/work/pulse.jpg`
-- `public/images/work/bake.jpg`
-- `public/images/work/slepton.jpg`
-- `public/images/work/tactile.jpg`
-
-Type, color, and header rules live in `design.md`. Working notes live in `memory.md`.
+Type, color, and header rules live in `design.md`. Project facts and the feed-me list live in `memory.md`.

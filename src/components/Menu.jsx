@@ -73,6 +73,17 @@ function Menu({ onClose }) {
             </a>
           </section>
 
+          <section className="menu-section">
+            <a
+              href="https://www.linkedin.com/in/ethan-scherwitz333"
+              className="menu-section-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h2 className="menu-section-title menu-section-title-italic">LinkedIn</h2>
+            </a>
+          </section>
+
           <footer className="menu-footer">
             <span className="menu-footer-mark">ES</span>
             <span className="menu-footer-mark">ES</span>
