@@ -1,11 +1,17 @@
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import PlaceholderImage from '../components/PlaceholderImage'
-import ProjectCard from '../components/ProjectCard'
-import { featuredSlugs, getProject } from '../data/projects'
+import { projects } from '../data/projects'
 import './HomePage.css'
 
 function HomePage() {
-  const featured = featuredSlugs.map((slug) => getProject(slug))
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.hash === '#work') {
+      document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [location])
 
   return (
     <main className="home">
@@ -15,34 +21,33 @@ function HomePage() {
             <PlaceholderImage src="/images/portrait.jpg" alt="Portrait of Ethan Scherwitz" label="PORTRAIT" />
           </div>
           <div className="home-intro-body">
-            <h1 className="home-title">
-              <span className="home-title-line">Who I Am</span>
+            <h1 className="home-text home-text--lead">
+              My name is Ethan Scherwitz, I&apos;m a Computer Science student at UTD, and I&apos;m passionate about solving technical problems with creative &amp; efficient solutions.
             </h1>
-            <p className="home-text home-text--lead">
-              Ethan Scherwitz builds tools and pipelines — Blender add-ons, Figma plugins, publish automations — so teams can move faster.
-            </p>
             <p className="home-text">
-              CS at UT Dallas. Applying to Game Lab for tooling, pipelines, and version control; UI/UX second. The work is custom software around 3D, design, and production, not a reel of shipped games.
-            </p>
-            <p className="home-text home-text--italic">
-              Screenshots and videos land here as they come in.
+              I&apos;m comfortable with programming full stack applications, building custom tools, and creative design.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="home-work">
-        <div className="section-divider">
-          <h2 className="section-divider-title">Selected</h2>
-        </div>
-        <div className="project-grid">
-          {featured.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
-          ))}
-        </div>
-        <Link to="/work" className="home-all-link">
-          All work
-        </Link>
+      <section className="home-work" id="work">
+        {projects.map((project, index) => (
+          <Link
+            key={project.slug}
+            className={`work-row${index % 2 === 1 ? ' work-row--flip' : ''}`}
+            to={`/work/${project.slug}`}
+          >
+            <div className="work-row-thumb">
+              <PlaceholderImage src={project.image} alt="" label="IMAGE" />
+            </div>
+            <div className="work-row-copy">
+              <p className="work-row-tag">{project.tag}</p>
+              <h2 className="work-row-title">{project.title}</h2>
+              <p className="work-row-text">{project.card}</p>
+            </div>
+          </Link>
+        ))}
       </section>
     </main>
   )

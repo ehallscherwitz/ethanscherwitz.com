@@ -10,13 +10,10 @@ function AboutPage() {
         </div>
         <h1 className="about-page-title">About</h1>
         <p className="about-page-text">
-          Computer science student at UT Dallas. I write the tools around production: a Blender lighting-bake add-on for browser and game assets, a Figma gesture plugin, a one-button shop-to-Pinterest publish path, backends for editorial and campus orgs.
+          I am a CS student at UT Dallas. I write software I actually use — a bake add-on for Blender, a Figma plugin, the site for my shop, the backend for Third Space Digital.
         </p>
         <p className="about-page-text">
-          That is the case for Game Lab tooling and pipelines. UI/UX is the second track — Third Space Digital, ACM Org Portal, Indigo Magazine, HackLab (Best Design).
-        </p>
-        <p className="about-page-text">
-          I would rather a team ship faster because of something I built than because I already made a game.
+          I also work on Org Portal at ACM, Indigo Magazine, and a few other things that live on the work page.
         </p>
       </div>
     </main>

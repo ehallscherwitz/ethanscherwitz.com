@@ -60,10 +60,11 @@
 }
 
 .project-page-video video {
+  display: block;
   width: 100%;
+  height: auto;
   border: 1px solid var(--color-black);
-  background: var(--color-white);
-  aspect-ratio: 16 / 9;
+  background: var(--color-black);
 }
 
 .project-page-caption {
@@ -82,13 +83,19 @@
 }
 
 .project-page-media--2,
-.project-page-media--3 {
+.project-page-media--3,
+.project-page-media--4 {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .project-page-frame {
   aspect-ratio: 4 / 5;
   border: 1px solid var(--color-black);
+}
+
+.project-page-frame--wide {
+  aspect-ratio: 16 / 10;
+  grid-column: 1 / -1;
 }
 
 .project-page-frame .placeholder-slot,
@@ -98,6 +105,19 @@
   height: 100%;
   min-height: 0;
   object-fit: cover;
+}
+
+.project-page-frame--contain {
+  background: #111;
+}
+
+.project-page-frame--wide.project-page-frame--contain {
+  background: var(--color-white);
+}
+
+.project-page-frame--contain img,
+.project-page-frame--contain .placeholder-photo {
+  object-fit: contain;
 }
 
 .project-page-body {
@@ -136,10 +156,19 @@
 }
 
 .project-page-back {
-  font-family: var(--font);
-  font-size: 14px;
-  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 0 24px;
+  color: var(--color-black);
   transition: opacity var(--ease);
+}
+
+.project-page-back svg {
+  width: 28px;
+  height: 28px;
 }
 
 .project-page-back:hover {

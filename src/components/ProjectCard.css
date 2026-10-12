@@ -21,7 +21,7 @@
   width: 100%;
   overflow: hidden;
   border-bottom: 1px solid var(--color-black);
-  aspect-ratio: 4 / 5;
+  aspect-ratio: var(--thumb-ratio);
   background-color: var(--color-white);
 }
 

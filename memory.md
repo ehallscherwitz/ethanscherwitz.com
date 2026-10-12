@@ -13,6 +13,8 @@ Thesis: a lot of applicants have built games. Ethan stands out by showing he wri
 
 Do **not** lead with “I make games.” Lead with **I make the tools other people ship with.**
 
+**Public site copy:** never mention Game Lab, the application, tracks, or “why I am a good candidate.” That framing is only for us. The live site should read like a normal portfolio. No thesis sentences, no “the case for,” no talking to Ethan in the copy.
+
 ## Person
 
 - Name: Ethan Scherwitz
@@ -34,7 +36,7 @@ Do **not** lead with “I make games.” Lead with **I make the tools other peop
 ## Site extras (requested)
 
 - Navbar: LinkedIn + GitHub (plus existing menu)
-- Footer: **Download resume** → `public/Ethan-Scherwitz-Resume.pdf` (file not in yet)
+- Footer: **Download resume** → `public/Ethan-Scherwitz-Resume.pdf` (copied from `ResumeSep23.pdf`, Sep 23 2026)
 
 ## Project order (tools first)
 
@@ -85,7 +87,7 @@ Do **not** lead with “I make games.” Lead with **I make the tools other peop
 - Plugin + React frontend + Python backend (gestures, cards, websocket plugin sync)
 
 **Still need from Ethan**
-- [ ] **Tactile video file** (you said “embedded tactile video download” — send the mp4/webm)
+- [x] **Tactile video file** — `public/videos/tactile.mp4`
 - [ ] Your role vs teammates (what you personally built)
 - [ ] Confirm I should use the LinkedIn/Devpost copy as the description (yes unless you rewrite it)
 
@@ -105,7 +107,9 @@ Do **not** lead with “I make games.” Lead with **I make the tools other peop
 - You said: leadership position, **backend single-handedly**, creative sites you built
 
 **Still need from Ethan**
-- [ ] Homepage screenshot
+- [x] Homepage screenshot — `public/images/work/thirdspace.jpg`
+- [x] Events page screenshot — `public/images/work/thirdspace-events.jpg`
+- [x] Article example screenshot — `public/images/work/thirdspace-article.jpg`
 - [ ] Exact title to print (Web Developer? Lead? Officer?)
 - [ ] Confirm “backend single-handedly” (Supabase, auth, events, issues, image pipeline — I can describe from the repo if you say yes)
 - [ ] Which **creative pages/articles** to highlight (list URLs or names: e.g. specific issues)
@@ -125,8 +129,9 @@ Do **not** lead with “I make games.” Lead with **I make the tools other peop
 - **Confirmed live Pinterest API:** `pinterestSync.ts` upserts/deletes product rows with `PINTEREST_ACCESS_TOKEN` (fire-and-forget after admin/checkout). Plus build-time CSV. One-button claim is accurate.
 
 **Still need from Ethan**
-- [ ] Screenshot of the storefront
-- [ ] Screenshot of the **admin one-button upload** (this is the tools shot)
+- [x] Screenshot of the storefront — `public/images/work/sov_thumbnail.png`
+- [x] Screenshot of the **admin one-button upload** — `public/images/work/sov_sync.png`
+- [x] Pinterest shop screenshot — `public/images/work/sov_pinterest.png`
 - [x] Pinterest: live catalog upsert API + CSV (not CSV-only)
 - [ ] Optional: Square vs other processors — README says Square
 
@@ -188,9 +193,9 @@ Do **not** lead with “I make games.” Lead with **I make the tools other peop
 
 ---
 
-## Homepage copy direction (until you rewrite)
+## Homepage copy
 
-Lead: CS student who builds **tools and pipelines** for 3D, design, and production — applying to Game Lab tooling first, UI/UX second.
+Keep it short. No Game Lab. No “who I am” manifesto. Header already has the name.
 
 ## Asset drop convention
 
@@ -205,8 +210,11 @@ public/images/work/bake-ui.jpg
 public/images/work/tactile.jpg          (poster still)
 public/videos/tactile.mp4
 public/images/work/thirdspace.jpg       (homepage SS)
-public/images/work/slepton.jpg
-public/images/work/slepton-admin.jpg
+public/images/work/thirdspace-events.jpg
+public/images/work/thirdspace-article.jpg
+public/images/work/sov_thumbnail.png
+public/images/work/sov_sync.png
+public/images/work/sov_pinterest.png
 public/images/work/orgportal-member.jpg
 public/images/work/orgportal-admin.jpg
 public/images/work/indigo.jpg
@@ -218,15 +226,16 @@ You can also drop files in chat. I will place them.
 
 ## Feed me next (highest leverage first)
 
-1. Resume PDF
-2. Blender: before / after / UI screenshots + confirm Three.js URL
-3. Tactile video + your role
-4. 3SD homepage SS + title/leadership sentence + which creative pages
-5. SleptOn admin one-button shot + Pinterest: API vs CSV
-6. Org Portal screenshots + what you owned
-7. Indigo video + live URL + gameplay paragraph
-8. HackLab resume-builder screenshot + app link
-9. Yes/no: mention JPMC on the site
+1. Resume PDF — **done** (`ResumeSep23.pdf`)
+2. Portrait — **done** (`public/images/portrait.jpg`)
+3. Blender: before / after / UI screenshots — **done** (after-bake is the homepage thumb)
+4. Tactile video — **done** (`public/videos/tactile.mp4`). Still need your role vs teammates
+5. 3SD homepage + events + article SS — **done**. Still need title/leadership sentence
+6. SleptOn storefront + admin + Pinterest SS — **done**
+7. Org Portal screenshots + what you owned
+8. Indigo video + live URL + gameplay paragraph
+9. HackLab resume-builder screenshot + app link
+10. Yes/no: mention JPMC on the site
 
 ## Stack for this site
 

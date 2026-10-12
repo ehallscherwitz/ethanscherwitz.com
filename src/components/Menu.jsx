@@ -45,7 +45,7 @@ function Menu({ onClose }) {
           </header>
 
           <section className="menu-section">
-            <Link to="/work" className="menu-section-link" onClick={handleClose}>
+            <Link to="/#work" className="menu-section-link" onClick={handleClose}>
               <h2 className="menu-section-title">Work</h2>
             </Link>
           </section>

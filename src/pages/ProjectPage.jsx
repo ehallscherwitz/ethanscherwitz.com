@@ -8,11 +8,17 @@ function ProjectPage() {
   const project = getProject(slug)
 
   if (!project) {
-    return <Navigate to="/work" replace />
+    return <Navigate to="/#work" replace />
   }
 
   return (
     <main className="project-page">
+      <Link to="/#work" className="project-page-back" aria-label="Back">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <line x1="26" y1="16" x2="6" y2="16" stroke="currentColor" strokeWidth="3" />
+          <polyline points="14,8 6,16 14,24" fill="none" stroke="currentColor" strokeWidth="3" />
+        </svg>
+      </Link>
       <p className="project-page-tag">{project.tag}</p>
       <h1 className="project-page-title">{project.title}</h1>
       <p className="project-page-role">{project.role}</p>
@@ -40,14 +46,16 @@ function ProjectPage() {
           <video controls playsInline poster={project.image}>
             <source src={project.video} type="video/mp4" />
           </video>
-          <p className="project-page-caption">Demo — drop the file at {project.video}</p>
         </div>
       )}
 
       <div className={`project-page-media project-page-media--${project.media.length}`}>
         {project.media.map((item) => (
-          <div key={item.src} className="project-page-frame">
-            <PlaceholderImage src={item.src} alt="" label={item.label} />
+          <div
+            key={item.src}
+            className={`project-page-frame${item.wide ? ' project-page-frame--wide' : ''}${item.contain ? ' project-page-frame--contain' : ''}`}
+          >
+            <PlaceholderImage src={item.src} alt={item.label} label={item.label} />
           </div>
         ))}
       </div>
@@ -69,9 +77,6 @@ function ProjectPage() {
         </>
       )}
 
-      <Link to="/work" className="project-page-back">
-        All work
-      </Link>
     </main>
   )
 }
