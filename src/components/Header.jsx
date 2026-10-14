@@ -6,7 +6,7 @@ import './Header.css'
 const TOP_THRESHOLD = 24
 const SCROLL_DELTA_THRESHOLD = 4
 
-function Header({ onOpenMenu }) {
+function Header() {
   const location = useLocation()
   const navigate = useNavigate()
   const lastScrollY = useRef(0)
@@ -104,19 +104,6 @@ function Header({ onOpenMenu }) {
           </svg>
           <span className="tooltip">linkedin</span>
         </a>
-        <button
-          type="button"
-          className="header-menu-button"
-          onClick={onOpenMenu}
-          aria-label="Open menu"
-        >
-          <svg className="header-icon-svg" viewBox="0 0 32 32" aria-hidden="true">
-            <line x1="4" y1="8" x2="28" y2="8" stroke="currentColor" strokeWidth="3" />
-            <line x1="4" y1="16" x2="28" y2="16" stroke="currentColor" strokeWidth="3" />
-            <line x1="4" y1="24" x2="28" y2="24" stroke="currentColor" strokeWidth="3" />
-          </svg>
-          <span className="tooltip">menu</span>
-        </button>
       </div>
     </header>
   )

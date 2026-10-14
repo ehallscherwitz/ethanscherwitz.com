@@ -25,13 +25,14 @@ function MediaGrid({ items }) {
   )
 }
 
-function VideoBlock({ project }) {
-  if (!project.video) return null
+function VideoBlock({ project, src, poster }) {
+  const videoSrc = src || project.video
+  if (!videoSrc) return null
 
   return (
     <div className="project-page-video">
-      <video controls playsInline poster={project.image}>
-        <source src={project.video} type="video/mp4" />
+      <video controls playsInline poster={poster || project.image}>
+        <source src={videoSrc} type="video/mp4" />
       </video>
     </div>
   )
@@ -107,7 +108,7 @@ function Story({ project }) {
     }
 
     if (block.type === 'video') {
-      return <VideoBlock key={key} project={project} />
+      return <VideoBlock key={key} project={project} src={block.src} poster={block.poster} />
     }
 
     if (block.type === 'media') {

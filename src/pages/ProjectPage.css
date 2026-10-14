@@ -75,7 +75,7 @@
   display: block;
   width: 100%;
   height: auto;
-  border: 1px solid var(--color-black);
+  border: none;
   background: var(--color-black);
 }
 
@@ -106,7 +106,7 @@
 .project-page-frame {
   aspect-ratio: 4 / 5;
   width: 100%;
-  border: 1px solid var(--color-black);
+  border: none;
 }
 
 .project-page-frame--wide {

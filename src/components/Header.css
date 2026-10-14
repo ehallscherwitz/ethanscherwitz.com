@@ -189,10 +189,6 @@
 }
 
 @media (max-width: 700px) {
-  .header-nav-icon {
-    display: none;
-  }
-
   .header {
     padding: 0 10px;
   }

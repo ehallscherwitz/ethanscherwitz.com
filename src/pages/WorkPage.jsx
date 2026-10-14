@@ -15,7 +15,7 @@ function WorkPage() {
           </div>
           <div className="project-grid">
             {projects
-              .filter((project) => project.section === section.id)
+              .filter((project) => !project.hidden && project.section === section.id)
               .map((project) => (
                 <ProjectCard key={project.slug} project={project} />
               ))}

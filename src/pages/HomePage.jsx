@@ -32,7 +32,7 @@ function HomePage() {
       </section>
 
       <section className="home-work" id="work">
-        {projects.map((project, index) => (
+        {projects.filter((project) => !project.hidden).map((project, index) => (
           <Link
             key={project.slug}
             className={`work-row${index % 2 === 1 ? ' work-row--flip' : ''}`}

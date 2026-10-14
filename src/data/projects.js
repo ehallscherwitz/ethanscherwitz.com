@@ -15,7 +15,6 @@ export const projects = [
     role: 'Blender add-on',
     image: '/images/work/bake-after.png',
     live: 'https://pulse-three-js.vercel.app',
-    liveLabel: 'In the browser',
     repo: 'https://github.com/ehallscherwitz/blender-bake-plugin',
     media: [
       {
@@ -188,7 +187,7 @@ export const projects = [
     title: 'Third Space Digital',
     tag: 'Site',
     section: 'platforms',
-    card: 'Founding web team. I built the backend and the article pages.',
+    card: 'Website hosting articles, events, and photoshoots for our organization',
     role: 'Founding web developer',
     image: '/images/work/thirdspace.jpg',
     live: 'https://3rdspacedigital.org',
@@ -227,17 +226,26 @@ export const projects = [
     title: 'Org Portal',
     tag: 'ACM',
     section: 'platforms',
-    card: 'Students find clubs. Officers run them.',
-    role: 'Org Portal officer',
-    image: '/images/work/orgportal-member.jpg',
+    card: 'A platform for students to find clubs, while allowing officers to manage them',
+    role: 'Development lead',
+    image: '/images/work/orgportal-landing.jpg',
     live: 'https://www.org-portal.com/landing',
+    repo: 'https://github.com/acmutd/orgportal',
     media: [
-      { src: '/images/work/orgportal-member.jpg', label: 'MEMBERS' },
-      { src: '/images/work/orgportal-admin.jpg', label: 'ADMIN' },
+      { src: '/images/work/orgportal-landing.jpg', label: 'LANDING', wide: true, contain: true, group: 'landing' },
+      { src: '/images/work/orgPortal.png', label: 'FEED', wide: true, contain: true, group: 'feed' },
     ],
-    body: [
-      'I am an officer on ACM UTD’s Org Portal. Members look for clubs. Officers manage people, events, and forms.',
-      'I have been on the database, image storage, QR check-in, and turning the designs into the actual screens.',
+    story: [
+      { type: 'media', group: 'landing' },
+      {
+        type: 'copy',
+        text: [
+          'Leading development Org Portal, a platform that helps students discover and join clubs while enabling club leaders to manage members efficiently.',
+          'Contributing to database design and management, image storage and display, QR code based event check-ins, and translating designs into functional code in order to enhance community involvement within the student body.',
+          'As lead I own the product decisions and have responsibility over the team’s development process.',
+        ],
+      },
+      { type: 'media', group: 'feed' },
     ],
   },
   {
@@ -245,19 +253,33 @@ export const projects = [
     title: 'Indigo Magazine',
     tag: 'Editorial',
     section: 'editorial',
-    card: 'Web developer. I put a playable layer on top of the writer’s piece.',
+    card: 'Creating interactive web experiences',
     role: 'Web developer',
-    image: '/images/work/indigo.jpg',
-    extra: 'https://www.linkedin.com/in/ethan-scherwitz333',
-    extraLabel: 'LinkedIn',
-    media: [{ src: '/images/work/indigo.jpg', label: 'INDIGO' }],
-    body: [
-      'Web developer at Indigo, UTD’s student magazine.',
-      'On Issue 11 I took what the writer made and built an interactive piece around it — sound, picture, something you move through instead of only read.',
+    image: '/images/work/indigo-homepage.jpg',
+    live: 'https://indigomagazinetx.com/issues/serial/keyboards',
+    media: [
+      { src: '/images/work/indigo-homepage.jpg', label: 'HOME', wide: true, contain: true, group: 'home' },
+    ],
+    story: [
+      { type: 'media', group: 'home' },
+      {
+        type: 'copy',
+        text: [
+          'Created an interactive audiovisual gameplay experience to increase engagement with the story created by our writer, graphics, and photography team.',
+          'Implemented using React.js, expanding on how future issues can be dynamically presented with storytelling elements.',
+          'Contributed to the architectural design choices of the website, helping shape its structure and development approach.',
+        ],
+      },
+      {
+        type: 'video',
+        src: '/videos/indigo.mp4',
+        poster: '/images/work/indigo-keyboards.png',
+      },
     ],
   },
   {
     slug: 'hacklab',
+    hidden: true,
     title: 'HackLab',
     tag: 'Backend',
     section: 'tools',
@@ -280,7 +302,7 @@ export const sections = [
 ]
 
 export function getProject(slug) {
-  return projects.find((project) => project.slug === slug)
+  return projects.find((project) => project.slug === slug && !project.hidden)
 }
 
 export const featuredSlugs = ['bake', 'tactile', 'slepton']
