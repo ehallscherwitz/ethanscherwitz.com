@@ -4,9 +4,10 @@ import './Footer.css'
 function Footer() {
   return (
     <footer className="site-footer">
-      <a className="site-footer-resume" href={socials.resume} download>
-        Download resume
-      </a>
+      <p className="site-footer-contact">
+        Contact Me:{' '}
+        <a href={socials.email}>ehallscherwitz@gmail.com</a>
+      </p>
     </footer>
   )
 }

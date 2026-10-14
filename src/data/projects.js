@@ -8,7 +8,7 @@ export const socials = {
 export const projects = [
   {
     slug: 'bake',
-    title: 'Lighting Bake',
+    title: 'Automatic Lighting Bake Add-On',
     tag: 'Blender',
     section: 'tools',
     card: 'Add-on that bakes lighting onto a new UV map so a scene can run in the browser without realtime lights.',
@@ -18,22 +18,84 @@ export const projects = [
     liveLabel: 'In the browser',
     repo: 'https://github.com/ehallscherwitz/blender-bake-plugin',
     media: [
-      { src: '/images/work/bake-before.jpg', label: 'BEFORE', wide: true },
-      { src: '/images/work/bake-after.png', label: 'AFTER', wide: true },
-      { src: '/images/work/bake-ui.png', label: 'INDIVIDUAL', contain: true },
-      { src: '/images/work/bake-ui-group.png', label: 'ONE MAP', contain: true },
+      {
+        src: '/images/work/bake-ui.png',
+        label: 'INDIVIDUAL',
+        caption: 'individual bake',
+        contain: true,
+        group: 'ui',
+      },
+      {
+        src: '/images/work/bake-ui-group.png',
+        label: 'ONE MAP',
+        caption: 'one shared map',
+        contain: true,
+        group: 'ui',
+      },
+      {
+        src: '/images/work/bake-before.jpg',
+        label: 'BEFORE',
+        caption: 'before running the automatic bake add on',
+        wide: true,
+        group: 'before',
+      },
+      {
+        src: '/images/work/bake-after.png',
+        label: 'AFTER',
+        caption: 'after running the automatic bake add on',
+        wide: true,
+        group: 'after',
+      },
     ],
-    body: [
-      'I was lighting a scene I wanted to put on the web, and later into a game. Realtime GI in the browser is too expensive, so I baked the lighting into the textures. Paid bake add-ons exist. They cost a lot, and they are not my workflow.',
-      'You check the meshes, pick a size, and bake. Each object can get its own map, or a group can share one — which also means fewer files to store. The add-on builds the UV, bakes, and writes PNGs into a folder.',
-      'The baked scene is up in Three.js. No live lights. Just the textures.',
-    ],
-    options: [
-      'Individual bake or one shared map',
-      '512 to 8192',
-      'Smart UV Project, Lightmap Pack, or keep the UVs you have',
-      'Margin, preview in the shader or leave the image unconnected, output folder',
-      'Checklist of meshes, then bake',
+    story: [
+      {
+        type: 'copy',
+        text: [
+          'I created an Auto Lighting Bake tool in Blender in order to greatly speed up my workflow as before I would have to individually UV Unwrap and setup the material node setup, wait for the item to bake, then do it all over for the next one. Some similar plugins already exist, but they cost money and aren’t optimized to my exact workflow.',
+        ],
+      },
+      {
+        type: 'steps',
+        heading: 'How it works step by step',
+        items: [
+          'Check the meshes you want in the Lighting Bake panel.',
+          'Pick individual (each object gets its own map) or one shared map for the group.',
+          'Set resolution, unwrap method, margin, and the output folder.',
+          'Hit Bake Lighting. It unwraps, sets up the material, bakes, and writes the PNGs.',
+        ],
+      },
+      { type: 'copy', text: ['Here is what the UI looks like'] },
+      { type: 'media', group: 'ui' },
+      {
+        type: 'list',
+        heading: 'Options',
+        items: [
+          'Individual bake or one shared map',
+          '512 to 8192',
+          'Smart UV Project, Lightmap Pack, or keep the UVs you have',
+          'Bake margin',
+          'Preview through the shader or leave the image unconnected',
+          'Output folder',
+          'Mesh checklist — all, none, refresh',
+        ],
+      },
+      {
+        type: 'copy',
+        text: [
+          'Some options include group vs individual bakes, in case you want to optimize the textures used.',
+          'I scripted this custom tool using python, iterating and testing until I came up with a product that had all of the options and automations necessary for me.',
+          'The reason I needed a fast way to bake lighting into the textures in my scene, was to prepare the objects and materials to be rendered in Three.js.',
+          'I discovered that baked lighting allows the web experience to run much faster compared to simulated lighting, ensuring that devices with low performance GPU can experience the site with no issue.',
+        ],
+      },
+      { type: 'media', group: 'before' },
+      { type: 'media', group: 'after' },
+      {
+        type: 'scene',
+        preface: 'Here’s a link to the scene I was able to bake with this method:',
+        href: 'https://pulse-three-js.vercel.app',
+        label: 'pulse-three-js.vercel.app',
+      },
     ],
   },
   {

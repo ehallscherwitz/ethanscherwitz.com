@@ -7,16 +7,18 @@
 .home-intro {
   display: flex;
   align-items: center;
-  padding: calc(var(--header-height) + 48px) 200px 64px;
+  justify-content: center;
+  padding: calc(var(--header-height) + 48px) var(--page-gutter) 64px;
   box-sizing: border-box;
 }
 
 .home-intro-grid {
   display: grid;
-  grid-template-columns: minmax(260px, 0.95fr) minmax(360px, 1.05fr);
+  grid-template-columns: minmax(220px, 0.85fr) minmax(280px, 1.15fr);
   align-items: center;
   column-gap: clamp(28px, 4vw, 72px);
   width: 100%;
+  max-width: var(--content-width);
 }
 
 .home-portrait {
@@ -68,15 +70,40 @@
 }
 
 .home-work {
-  padding: 0 200px 120px;
+  padding: 0 var(--page-gutter) 48px;
   scroll-margin-top: var(--header-height);
+}
+
+.home-resume {
+  display: flex;
+  justify-content: center;
+  padding: 24px var(--page-gutter) 80px;
+}
+
+.home-resume-link {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+  padding: 14px 28px;
+  transition: opacity var(--ease);
+}
+
+.home-resume-link:hover {
+  opacity: var(--hover-opacity);
 }
 
 .work-row {
   display: grid;
-  grid-template-columns: minmax(280px, 1.15fr) minmax(280px, 0.85fr);
+  grid-template-columns: minmax(220px, 0.85fr) minmax(240px, 1.15fr);
   align-items: center;
-  column-gap: clamp(28px, 4vw, 72px);
+  column-gap: clamp(28px, 4vw, 64px);
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
   padding: 48px 0;
   border-top: 1px solid var(--color-black);
   text-decoration: none;
@@ -88,7 +115,7 @@
 }
 
 .work-row--flip {
-  grid-template-columns: minmax(280px, 0.85fr) minmax(280px, 1.15fr);
+  grid-template-columns: minmax(240px, 1.15fr) minmax(220px, 0.85fr);
 }
 
 .work-row--flip .work-row-thumb {
@@ -102,13 +129,13 @@
 .work-row-thumb {
   aspect-ratio: var(--thumb-ratio);
   width: 100%;
-  max-width: 640px;
+  max-width: 420px;
   border: 1px solid var(--color-black);
-  justify-self: start;
+  justify-self: center;
 }
 
 .work-row--flip .work-row-thumb {
-  justify-self: end;
+  justify-self: center;
 }
 
 .work-row-thumb .placeholder-slot,
@@ -193,7 +220,7 @@
   }
 
   .home-work {
-    padding: 0 40px 80px;
+    padding: 0 40px 48px;
   }
 }
 
@@ -214,7 +241,7 @@
   }
 
   .home-work {
-    padding: 0 30px 80px;
+    padding: 0 30px 48px;
   }
 
   .section-divider-title {
@@ -248,7 +275,7 @@
   }
 
   .home-work {
-    padding: 0 20px 80px;
+    padding: 0 20px 48px;
   }
 }
 

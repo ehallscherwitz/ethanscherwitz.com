@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import PlaceholderImage from '../components/PlaceholderImage'
-import { projects } from '../data/projects'
+import { projects, socials } from '../data/projects'
 import './HomePage.css'
 
 function HomePage() {
@@ -49,6 +49,12 @@ function HomePage() {
           </Link>
         ))}
       </section>
+
+      <div className="home-resume">
+        <a className="home-resume-link" href={socials.resume} download>
+          Download resume
+        </a>
+      </div>
     </main>
   )
 }

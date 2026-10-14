@@ -9,6 +9,8 @@
   --color-overlay: rgba(0, 0, 0, 0.5);
   --header-height: 65px;
   --page-pad-top: 120px;
+  --page-gutter: clamp(48px, 16vw, 280px);
+  --content-width: 920px;
   --thumb-ratio: 1024 / 727;
   --hover-opacity: 0.7;
   --ease: 0.2s;
