@@ -25,12 +25,40 @@ function MediaGrid({ items }) {
   )
 }
 
+function VideoBlock({ project }) {
+  if (!project.video) return null
+
+  return (
+    <div className="project-page-video">
+      <video controls playsInline poster={project.image}>
+        <source src={project.video} type="video/mp4" />
+      </video>
+    </div>
+  )
+}
+
 function CopyBlock({ text }) {
   return (
     <div className="project-page-body">
       {text.map((paragraph) => (
         <p key={paragraph}>{paragraph}</p>
       ))}
+    </div>
+  )
+}
+
+function PointsBlock({ heading, items }) {
+  return (
+    <div className="project-page-copy">
+      {heading && <h2 className="project-page-subtitle">{heading}</h2>}
+      <div className="project-page-points">
+        {items.map((item) => (
+          <div key={item.title} className="project-page-point">
+            <h3 className="project-page-point-title">{item.title}</h3>
+            <p className="project-page-point-text">{item.text}</p>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
@@ -74,6 +102,14 @@ function Story({ project }) {
       return <ListBlock key={key} heading={block.heading} items={block.items} />
     }
 
+    if (block.type === 'points') {
+      return <PointsBlock key={key} heading={block.heading} items={block.items} />
+    }
+
+    if (block.type === 'video') {
+      return <VideoBlock key={key} project={project} />
+    }
+
     if (block.type === 'media') {
       return (
         <MediaGrid
@@ -115,41 +151,19 @@ function ProjectPage() {
 
   return (
     <main className="project-page">
-      <Link to="/#work" className="project-page-back" aria-label="Back">
-        <svg viewBox="0 0 32 32" aria-hidden="true">
-          <line x1="26" y1="16" x2="6" y2="16" stroke="currentColor" strokeWidth="3" />
-          <polyline points="14,8 6,16 14,24" fill="none" stroke="currentColor" strokeWidth="3" />
-        </svg>
-      </Link>
-      <p className="project-page-tag">{project.tag}</p>
-      <h1 className="project-page-title">{project.title}</h1>
-      <p className="project-page-role">{project.role}</p>
+      <header className="project-page-header">
+        <Link to="/#work" className="project-page-back" aria-label="Back">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <line x1="26" y1="16" x2="6" y2="16" stroke="currentColor" strokeWidth="3" />
+            <polyline points="14,8 6,16 14,24" fill="none" stroke="currentColor" strokeWidth="3" />
+          </svg>
+        </Link>
+        <p className="project-page-tag">{project.tag}</p>
+        <h1 className="project-page-title">{project.title}</h1>
+        <p className="project-page-role">{project.role}</p>
+      </header>
 
-      <div className="project-page-links">
-        {project.live && !project.story && (
-          <a href={project.live} target="_blank" rel="noopener noreferrer">
-            {project.liveLabel || 'Live'}
-          </a>
-        )}
-        {project.repo && (
-          <a href={project.repo} target="_blank" rel="noopener noreferrer">
-            Repo
-          </a>
-        )}
-        {project.extra && (
-          <a href={project.extra} target="_blank" rel="noopener noreferrer">
-            {project.extraLabel || 'More'}
-          </a>
-        )}
-      </div>
-
-      {project.video && (
-        <div className="project-page-video">
-          <video controls playsInline poster={project.image}>
-            <source src={project.video} type="video/mp4" />
-          </video>
-        </div>
-      )}
+      {project.video && !project.story && <VideoBlock project={project} />}
 
       {project.story ? (
         <Story project={project} />
@@ -163,6 +177,26 @@ function ProjectPage() {
           <MediaGrid items={after} />
           <CopyBlock text={project.body} />
         </>
+      )}
+
+      {(project.live || project.repo || project.extra) && (
+        <div className="project-page-links">
+          {project.live && (
+            <a href={project.live} target="_blank" rel="noopener noreferrer">
+              {project.liveLabel || 'Live'}
+            </a>
+          )}
+          {project.repo && (
+            <a href={project.repo} target="_blank" rel="noopener noreferrer">
+              Repo
+            </a>
+          )}
+          {project.extra && (
+            <a href={project.extra} target="_blank" rel="noopener noreferrer">
+              {project.extraLabel || 'More'}
+            </a>
+          )}
+        </div>
       )}
     </main>
   )

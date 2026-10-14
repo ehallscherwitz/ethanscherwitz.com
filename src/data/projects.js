@@ -90,12 +90,6 @@ export const projects = [
       },
       { type: 'media', group: 'before' },
       { type: 'media', group: 'after' },
-      {
-        type: 'scene',
-        preface: 'Here’s a link to the scene I was able to bake with this method:',
-        href: 'https://pulse-three-js.vercel.app',
-        label: 'pulse-three-js.vercel.app',
-      },
     ],
   },
   {
@@ -103,20 +97,50 @@ export const projects = [
     title: 'tactile',
     tag: 'Figma',
     section: 'tools',
-    card: 'Figma plugin. Hands in, frames out.',
-    role: 'Figma plugin · 24 hours',
+    card: 'A project built for FigBuild 2026, integrated with your designs and your camera.',
+    role: 'Figma plugin · FigBuild 2026',
     image: '/images/work/tactile.jpg',
     repo: 'https://github.com/ehallscherwitz/tactile',
     extra: 'https://devpost.com/software/tactile-tyoilq',
     extraLabel: 'Devpost',
     video: '/videos/tactile.mp4',
     media: [
-      { src: '/images/work/tactile.jpg', label: 'TACTILE', wide: true },
-      { src: '/images/work/tactile-plugin.png', label: 'PLUGIN', wide: true },
+      { src: '/images/work/tactile.jpg', label: 'TACTILE', wide: true, group: 'shots' },
+      { src: '/images/work/tactile-plugin.png', label: 'PLUGIN', wide: true, group: 'shots' },
     ],
-    body: [
-      'Noor Haider, Christopher Tran, Prabhas Gade, and I made this in 24 hours for a Figma makathon. You design with your hands. The plugin watches the gestures and writes them into Figma.',
-      'There is a Figma plugin, a small frontend, and a Python backend on a websocket. Pull the page out of Figma, change size or color or glass with a gesture, push a new frame back. If nothing is selected it makes a card for you.',
+    story: [
+      {
+        type: 'copy',
+        text: [
+          'Tactile was a project built for FigBuild 2026.',
+          'Our goal was to break down the barrier between a user’s thoughts and the digital canvas by introducing hand gesture-based inputs.',
+          'For this project I built a custom Figma plugin to allow our product to integrate with theirs seamlessly, building a direct pipeline between any Figma project and our backend. I also built the backend with FastAPI.',
+        ],
+      },
+      { type: 'video' },
+      {
+        type: 'points',
+        heading: 'How it works',
+        items: [
+          {
+            title: 'Real-Time Gesture Tracking',
+            text: 'As users interact with our React frontend, MediaPipe processes the webcam feed to instantly capture hand movements.',
+          },
+          {
+            title: 'Context Capture',
+            text: 'When a user starts a workflow, the frontend calls our FastAPI backend. The backend communicates with our custom Figma plugin, which captures context from the active Figma page—like layout, typography, and color information—and stores that snapshot in MongoDB.',
+          },
+          {
+            title: 'Contextual Frame Creation',
+            text: 'We then pass that context through our LangChain pipeline with Groq to build a new Javascript frame that perfectly matches the design language of the original file.',
+          },
+          {
+            title: 'Live Manipulation & Syncing',
+            text: 'That generated frame is returned to the frontend, where users can manipulate it live with their hand gestures. When they are done, the frontend sends the final state back to the backend, and we push the updated frame directly into Figma through the plugin.',
+          },
+        ],
+      },
+      { type: 'media', group: 'shots' },
     ],
   },
   {
