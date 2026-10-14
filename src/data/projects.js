@@ -154,14 +154,33 @@ export const projects = [
     live: 'https://sleptonvintage.com',
     repo: 'https://github.com/ehallscherwitz/SleptOnVintage.com',
     media: [
-      { src: '/images/work/sov_thumbnail.png', label: 'SHOP', wide: true, contain: true },
-      { src: '/images/work/sov_sync.png', label: 'ADMIN', wide: true, contain: true },
-      { src: '/images/work/sov_pinterest.png', label: 'PINTEREST', wide: true, contain: true },
+      { src: '/images/work/sov_thumbnail.png', label: 'SHOP', wide: true, contain: true, group: 'shop' },
+      { src: '/images/work/sov_sync.png', label: 'ADMIN', wide: true, contain: true, group: 'admin' },
+      { src: '/images/work/sov_pinterest.png', label: 'PINTEREST', wide: true, contain: true, group: 'pinterest' },
     ],
-    body: [
-      'I built the website for my vintage shop. React, Supabase, Square, hosted on Vercel. Not a theme.',
-      'Admin is the part I care about. I add an item, it hits the database and the storefront, and it gets pushed to Pinterest. One place to publish.',
-      'Checkout is Square. Cart, Google sign-in, orders, a giveaway wheel if I am running one.',
+    story: [
+      {
+        type: 'copy',
+        text: [
+          'Slept On Vintage is my vintage clothing business. I have been selling online and in person for >3 years now. In order to gain more control over my business and the tools available to me, I designed my own website and system.',
+        ],
+      },
+      { type: 'media', group: 'shop' },
+      {
+        type: 'copy',
+        text: [
+          'The website allows customers to view all the items I have in stock and purchase items, while allowing me to keep track of orders, inventory, and provide order status updates to customers.',
+        ],
+      },
+      { type: 'media', group: 'admin' },
+      {
+        type: 'copy',
+        text: [
+          'I integrate with Stripe for payment processing and Google for account management.',
+          'I created a custom pipeline that allows me to turn all of my items into enriched Pinterest pins automatically, driving significantly more traffic to my site.',
+        ],
+      },
+      { type: 'media', group: 'pinterest' },
     ],
   },
   {

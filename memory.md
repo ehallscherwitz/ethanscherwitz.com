@@ -124,7 +124,8 @@ Do **not** lead with “I make games.” Lead with **I make the tools other peop
 **What I have**
 - Live: https://sleptonvintage.com
 - Repo: https://github.com/ehallscherwitz/SleptOnVintage.com
-- React + Vite + Supabase + Square checkout + Vercel
+- React + Vite + Supabase + Stripe checkout + Vercel
+- Ethan’s public copy says Stripe (not Square)
 - Admin console, Pinterest catalog CSV / Rich Pins in the build
 - **Confirmed live Pinterest API:** `pinterestSync.ts` upserts/deletes product rows with `PINTEREST_ACCESS_TOKEN` (fire-and-forget after admin/checkout). Plus build-time CSV. One-button claim is accurate.
 
@@ -133,7 +134,7 @@ Do **not** lead with “I make games.” Lead with **I make the tools other peop
 - [x] Screenshot of the **admin one-button upload** — `public/images/work/sov_sync.png`
 - [x] Pinterest shop screenshot — `public/images/work/sov_pinterest.png`
 - [x] Pinterest: live catalog upsert API + CSV (not CSV-only)
-- [ ] Optional: Square vs other processors — README says Square
+- [x] Payments: Stripe (public copy). Google for accounts. Pinterest auto-pins.
 
 ---
 
