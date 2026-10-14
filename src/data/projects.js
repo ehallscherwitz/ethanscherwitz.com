@@ -148,7 +148,7 @@ export const projects = [
     title: 'Slept On Vintage',
     tag: 'Shop',
     section: 'tools',
-    card: 'Site for my shop. I list a piece once and it goes on the store and to Pinterest.',
+    card: 'My vintage clothing business website & systems',
     role: 'My shop',
     image: '/images/work/sov_thumbnail.png',
     live: 'https://sleptonvintage.com',
@@ -194,13 +194,32 @@ export const projects = [
     live: 'https://3rdspacedigital.org',
     repo: 'https://github.com/3rd-Space-Digital/3SD-Website',
     media: [
-      { src: '/images/work/thirdspace.jpg', label: 'HOME', wide: true, contain: true },
-      { src: '/images/work/thirdspace-events.jpg', label: 'EVENTS', wide: true, contain: true },
-      { src: '/images/work/thirdspace-article.jpg', label: 'ARTICLE', wide: true, contain: true },
+      { src: '/images/work/thirdspace.jpg', label: 'HOME', wide: true, contain: true, group: 'home' },
+      { src: '/images/work/thirdspace-article.jpg', label: 'ARTICLE', wide: true, contain: true, group: 'article' },
+      { src: '/images/work/thirdspace-events.jpg', label: 'EVENTS', wide: true, contain: true, group: 'events' },
     ],
-    body: [
-      'Prabhas Gade, Julia Marie Bacud, and I built the Third Space Digital site from scratch in about three months. Events, photo archives, issues, interviews.',
-      'I did the database and how content is stored and served — events, issues, images, login. I also built the custom article pages.',
+    story: [
+      {
+        type: 'copy',
+        text: [
+          'As a member of the founding web dev team, I built the Third Space Digital website from zero as a digital platform to center the creative works and community of our organization, designing and building the SQL database and content storage and delivery protocols.',
+        ],
+      },
+      { type: 'media', group: 'home' },
+      {
+        type: 'copy',
+        text: [
+          'I have created structured digital articles and events, and designed interactive custom articles for special issues.',
+        ],
+      },
+      { type: 'media', group: 'article' },
+      {
+        type: 'copy',
+        text: [
+          'We launched after less than 3 months of development, driving new traffic and interest to the organization.',
+        ],
+      },
+      { type: 'media', group: 'events' },
     ],
   },
   {
